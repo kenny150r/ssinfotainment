@@ -24,16 +24,19 @@ The car has the female port; the pigtail is **male** (J1962M).
 | 5 | |
 | 16 | |
 
-## Sniffer wiring (ESP32 + NCV7356)
+## Sniffer wiring (ESP32 + NCV7356, SOIC-8)
+
+NCV7356 pinout: 1 TxD · 2 MODE0 · 3 MODE1 · 4 RxD · 5 VBAT · 6 LOAD · 7 CANH · 8 GND
 
 | From | To | Notes |
 |---|---|---|
-| OBD pin 1 | Transceiver CANH (bus) | Via the breakout's load/filter if present |
-| OBD pin 16 | Transceiver VBAT | Add an inline fuse (1A) |
-| OBD pins 4/5 | Transceiver GND + ESP32 GND | Common ground |
-| Transceiver TxD | ESP32 CAN TX GPIO | Set in firmware |
-| Transceiver RxD | ESP32 CAN RX GPIO | Pull-up to **3.3V**, not 5V |
-| Transceiver MODE0/MODE1 | Tie for normal mode | Check datasheet |
+| OBD pin 1 | NCV7356 pin 7 (CANH) | Optional 47µH series inductor + 100pF to GND for noise |
+| OBD pin 16 | NCV7356 pin 5 (VBAT) | 1A inline fuse → 1N4004 diode → pin 5; 10µF + 100nF to GND at the chip |
+| OBD pins 4/5 | NCV7356 pin 8 + ESP32 GND | Common ground |
+| NCV7356 pin 6 (LOAD) | NCV7356 pin 7 (CANH) | 6.49k load resistor (6.8k fine) |
+| NCV7356 pin 1 (TxD) | ESP32 GPIO 25 | CAN TX |
+| NCV7356 pin 4 (RxD) | ESP32 GPIO 26 | 2.7k pull-up to **3.3V** |
+| NCV7356 pins 2, 3 (MODE0/1) | 3.3V | Both high = normal mode (default is sleep) |
 | ESP32 USB | Laptop | Powers the ESP32 while sniffing |
 
 Fill in exact GPIO numbers in `sniffer/README.md` once chosen.

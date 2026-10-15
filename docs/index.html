@@ -198,13 +198,13 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:v
       <h3>Wiring</h3>
       <div class="tablewrap"><table>
         <tr><th>From</th><th>To</th><th>Notes</th></tr>
-        <tr><td>OBD pin 1</td><td>Transceiver CANH (bus pin)</td><td>The single-wire body bus</td></tr>
-        <tr><td>OBD pin 16 (12V)</td><td>Transceiver VBAT</td><td>Through the 1A inline fuse</td></tr>
-        <tr><td>OBD pins 4 + 5</td><td>Transceiver GND + ESP32 GND</td><td>Common ground</td></tr>
-        <tr><td>Transceiver LOAD</td><td>~9.1k to GND</td><td>Bus load resistor (check breakout; may be on board)</td></tr>
-        <tr><td>Transceiver TxD</td><td>ESP32 GPIO 25</td><td></td></tr>
-        <tr><td>Transceiver RxD</td><td>ESP32 GPIO 26</td><td>4.7k pull-up to <b>3.3V</b>, never 5V</td></tr>
-        <tr><td>MODE0 + MODE1</td><td>3.3V</td><td>Normal mode; both default low (sleep)</td></tr>
+        <tr><td>OBD pin 1</td><td>NCV7356 pin 7 (CANH)</td><td>Optional 47µH inductor in series + 100pF to GND (noise filtering)</td></tr>
+        <tr><td>OBD pin 16 (12V)</td><td>NCV7356 pin 5 (VBAT)</td><td>Through 1A fuse + 1N4004 diode; 10µF + 100nF to GND at the chip</td></tr>
+        <tr><td>OBD pins 4 + 5</td><td>NCV7356 pin 8 (GND) + ESP32 GND</td><td>Common ground</td></tr>
+        <tr><td>NCV7356 pin 6 (LOAD)</td><td>6.49k to CANH (pin 7)</td><td>Bus load resistor (6.8k is fine); may be on a breakout already</td></tr>
+        <tr><td>NCV7356 pin 1 (TxD)</td><td>ESP32 GPIO 25</td><td></td></tr>
+        <tr><td>NCV7356 pin 4 (RxD)</td><td>ESP32 GPIO 26</td><td>2.7k pull-up to <b>3.3V</b>, never 5V</td></tr>
+        <tr><td>NCV7356 pins 2 + 3 (MODE0, MODE1)</td><td>3.3V</td><td>Both high = normal mode; internal pull-downs default to sleep</td></tr>
         <tr><td>ESP32 USB</td><td>Laptop</td><td>Powers the ESP32</td></tr>
       </table></div>
       <div class="callout"><b>No traffic?</b> Check pin 1 continuity, that mode pins are high, the bit rate is 33,333, and the car is actually awake (accessory on, or open a door). A wrong bit rate shows as bus errors rather than silence.</div>

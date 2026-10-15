@@ -11,7 +11,8 @@ Status: `have` · `ordered` · `need` · `maybe`
 | ESP32 dev board (ESP-WROOM-32) | 3-pack on hand; only one needed | — | have |
 | Single-wire CAN transceiver | **MikroE Single Wire CAN Click (MIKROE-4225)** — NCV7356, 3.3V/5V logic. https://www.mikroe.com/single-wire-can-click · Alt: bare NCV7356D1R2G (Digi-Key) + SOIC-8 adapter | ~$11 | need |
 | Male OBD-II pigtail (J1962M) | Must have pins 1, 4, 5, 16 wired — verify with continuity test | $8–15 | have |
-| Breadboard, jumpers, 4.7k resistor | | $10 | need |
+| Bare-chip route extras | SOIC-8→DIP adapter, 6.49k (or 6.8k), 2.7k, 1N4004, 10µF 50V, 100nF; optional 47µH inductor + 100pF | ~$5 in parts | need if bare chip |
+| Breadboard, jumpers | | $10 | need |
 | SN65HVD230 CAN transceiver | Only for high-speed CAN sniffing (2nd ESP32) | $5 | maybe |
 
 Existing Bluetooth OBD reader: only useful if it's an OBDLink MX+ (supports GM single-wire CAN). ELM327 clones can't see the body bus.
