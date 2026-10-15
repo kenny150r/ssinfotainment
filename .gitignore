@@ -1,0 +1,15 @@
+# Large captures (keep small ones only)
+logs/**/*.big.csv
+logs/**/*.asc.gz
+
+# Build output
+build/
+.pio/
+__pycache__/
+*.pyc
+node_modules/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
