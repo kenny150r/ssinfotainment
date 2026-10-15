@@ -9,7 +9,7 @@ Status: `have` · `ordered` · `need` · `maybe`
 | Part | Notes | ~Cost | Status |
 |---|---|---|---|
 | ESP32 dev board (ESP-WROOM-32) | 3-pack on hand; only one needed | — | have |
-| Single-wire CAN transceiver breakout | NCV7356 or TH8056. RxD pull-up must go to 3.3V | $5–15 | need |
+| Single-wire CAN transceiver | **MikroE Single Wire CAN Click (MIKROE-4225)** — NCV7356, 3.3V/5V logic. https://www.mikroe.com/single-wire-can-click · Alt: bare NCV7356D1R2G (Digi-Key) + SOIC-8 adapter | ~$11 | need |
 | Male OBD-II pigtail (J1962M) | Must have pins 1, 4, 5, 16 wired — verify with continuity test | $8–15 | have |
 | Breadboard, jumpers, 4.7k resistor | | $10 | need |
 | SN65HVD230 CAN transceiver | Only for high-speed CAN sniffing (2nd ESP32) | $5 | maybe |
