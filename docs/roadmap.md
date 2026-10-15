@@ -4,7 +4,8 @@ Check items off as they're done. Each phase should end with something that works
 
 ## Phase 0 — Sniffer build
 - [ ] Order single-wire CAN transceiver breakout (NCV7356 or TH8056)
-- [ ] Order male OBD-II pigtail with pins 1, 4, 5, 16 wired
+- [x] Get male OBD-II pigtail
+- [ ] Continuity-test pigtail: map pins 1, 4, 5, 16 to wire colors (record in `docs/wiring.md`)
 - [ ] Wire ESP32 + transceiver on a breadboard (see `sniffer/README.md`)
 - [ ] Flash ESP32RET, configure 33.3 kbps
 - [ ] Connect SavvyCAN on laptop, confirm it sees the board

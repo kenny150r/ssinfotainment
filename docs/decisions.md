@@ -9,6 +9,9 @@ Linux + native UI + Android Auto fits easily in 4GB. 8GB only matters for full A
 ## 2026-10-14 — DIY ESP32 sniffer instead of Macchina M2
 M2 is sold out. ESP32 (already on hand) + single-wire CAN transceiver + ESP32RET firmware works with SavvyCAN the same way.
 
+## 2026-10-14 — Committed to the ESP32 sniffer route
+ESP32 board and OBD-II pigtail on hand. Remaining part: single-wire CAN transceiver.
+
 ## 2026-10-14 — Pi handles CAN directly (MCP2515 + transceiver); ESP32 bridge optional
 Fewer boards, and SocketCAN is easy to work with.
 *Revisit if:* the car needs radio heartbeat messages faster than the Pi boots, or we want wake-on-CAN.

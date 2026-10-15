@@ -15,6 +15,15 @@ Always confirm pinouts with a multimeter before connecting anything.
 
 The car has the female port; the pigtail is **male** (J1962M).
 
+### Our pigtail's wire colors (fill in after continuity test)
+
+| OBD pin | Wire color |
+|---|---|
+| 1 | |
+| 4 | |
+| 5 | |
+| 16 | |
+
 ## Sniffer wiring (ESP32 + NCV7356)
 
 | From | To | Notes |
