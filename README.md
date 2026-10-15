@@ -6,6 +6,8 @@ A homemade replacement infotainment system for a **2015 Chevy SS** (Holden VF Co
 
 **Phase 0 – Planning & sniffer build.** See [docs/roadmap.md](docs/roadmap.md).
 
+**Weekend-by-weekend build plan:** https://kenny150r.github.io/ssinfotainment/ (source: `docs/index.html`)
+
 ## Repo layout
 
 | Path | What lives there |
